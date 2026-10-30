@@ -1,0 +1,50 @@
+name: 'OrangeTree'
+
+PatchLen: 1
+PatchStride: 1
+ 
+TreeType: 'LinearUp'
+BranchNum: 4
+
+EmbeddingMethod: 'Linear'
+
+PositionEncoding: False
+
+RangePositionEncoding: False
+RangePositionEncodingFor: 'topk'
+
+ShrinkOrExpand: False
+ShrinkOrExpandChannelNum: 128
+ShrinkOrExpandMode: 'SimpleCNN'
+ShrinkerGNNTemp: 0.1
+
+GlobalResidual: False
+GlobalResidualProvider: Linear
+
+RangeGateType: 'votes'
+
+RangeAdditionalWeighter: True
+RangeAdditionalWeighterType: 'Linear'
+
+residual: True
+SamplingNum: 96
+
+
+sigmoid: False
+avg: False
+
+dropout: 0.5
+
+WeighterHiddenSize: 32
+HiddenSize: 384
+
+
+TopK: True
+TopKMode: 'rate'
+KRate: 0.01
+FixedK: 5
+
+
+
+predictor: 'DecoderMLP'
+DecoderBranchNum: 4

@@ -1,0 +1,36 @@
+defaults:
+  - _self_
+  - model: OrangeTreeFast
+  - dataset: etth1
+
+device: cpu
+LossFunction: 'MIX'
+MAERate: 0.8
+LossPower: 1
+
+dataset: 
+  InputLen:
+   - 96
+
+  TargetLen:
+   - 96
+
+  stride: 1
+
+model:
+  affine: True
+  norm: True
+
+  LayerNorm: False
+
+  BatchSize: 16
+  ValAndTestBatchSize: 16
+
+  EpochNum: 50
+  LearningRate: 0.0002
+
+  ReduceLRThreshold: 3
+  LearningRateReducer: 0.5
+  patience: 3
+  RollBack: False
+  MaxContinuousRollBack: 3
